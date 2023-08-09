@@ -1,6 +1,9 @@
 import "./App.css"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import HomePage from "./pages/Home.page"
+import ShoppingCartPage from "./pages/ShoppingCart.page"
+import CheckoutPage from "./pages/Checkout.page"
+import NotFoundPage from "./pages/NotFound.page"
 
 function App() {
 	fetch("http://localhost:3000/products")
@@ -9,16 +12,18 @@ function App() {
 		})
 		.then(console.log)
 
-
-    
-
-	return (<>
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </Router>
-  </>)
+	return (
+		<>
+			<Router>
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					<Route path="/shoppingcart" element={<ShoppingCartPage />} />
+					<Route path="/checkout" element={<CheckoutPage />} />
+					<Route path="*" element={<NotFoundPage />} />
+				</Routes>
+			</Router>
+		</>
+	)
 }
 
 export default App
