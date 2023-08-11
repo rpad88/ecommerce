@@ -12,9 +12,9 @@ export default function ProductCardComponent({item}) {
     <>
     <Card style={{margin: '5px'}}>
         <Card.Img variant="top" src="https://placehold.co/250x200" />
-        <Card.Body style={{textOverflow: 'ellipsis'}}>
+        <Card.Body style={{ overflow: 'hidden', textOverflow: 'ellipsis'}}>
             <Card.Title>{MoneyFormatter.format(item.price)}</Card.Title>
-            <Card.Text >{item.description} </Card.Text>
+            <Card.Text>{item.description} </Card.Text>
         </Card.Body>
     </Card>
     </>
