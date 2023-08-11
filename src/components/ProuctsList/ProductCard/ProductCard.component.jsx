@@ -10,7 +10,7 @@ export default function ProductCardComponent({item}) {
 
   return (
     <>
-    <Card style={{margin: '5px', maxHeight: '350px'}}>
+    <Card style={{margin: '5px'}}>
         <Card.Img variant="top" src="https://placehold.co/250x200" />
         <Card.Body style={{textOverflow: 'ellipsis'}}>
             <Card.Title>{MoneyFormatter.format(item.price)}</Card.Title>
