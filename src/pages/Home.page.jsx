@@ -8,6 +8,7 @@ export default function HomePage() {
 			<HeaderComponent />
 			<Container>
 				<ProductListComponent sectionName="ofertas do dia" />
+				<ProductListComponent sectionName="melhores produtos" />
 			</Container>
 		</>
 	)

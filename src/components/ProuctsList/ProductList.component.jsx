@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react'
 import { ProductsService } from '../../service/Products.service'
 
 export default function ProductListComponent({ sectionName }) {
-	const [promotion, setPromotion] = useState([])
+	const [products, setProducts] = useState([])
 
 	useEffect(() => {
 		async function getProducts() {
 			const data = await ProductsService.getAllProducts()
             if(!data) return alert('something get wrong')
-            setPromotion(data)
+            setProducts(data)
 		}
 		getProducts()
 	},[])
@@ -20,7 +20,7 @@ export default function ProductListComponent({ sectionName }) {
 			<Styled.WrapperTitle>{sectionName}</Styled.WrapperTitle>
 			<Styled.CardGroup>
 				{
-                    promotion?.map((item) => <ProductCardComponent key={item.id} item={item} />)
+                    products?.map((item) => <ProductCardComponent key={item.id} item={item} />)
                 }
 			</Styled.CardGroup>
 		</Styled.ProductListWrapper>
