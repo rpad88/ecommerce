@@ -1,13 +1,20 @@
 import { Card } from "react-bootstrap";
 
-export default function ProductCardComponent() {
+export default function ProductCardComponent({item}) {
+
+    const MoneyFormatter = new Intl.NumberFormat("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      })
+
+
   return (
     <>
-    <Card style={{width: '250px'}}>
+    <Card style={{margin: '5px', maxHeight: '350px'}}>
         <Card.Img variant="top" src="https://placehold.co/250x200" />
         <Card.Body style={{textOverflow: 'ellipsis'}}>
-            <Card.Title>R$ 999.99</Card.Title>
-            <Card.Text >Pellentesque feugiat elit quis orci volutpat varius. Nullam sagittis lectus non est vehicula, quis cursus risus semper. Maecenas ac dui eu nisi rhoncus mattis id quis dolor. </Card.Text>
+            <Card.Title>{MoneyFormatter.format(item.price)}</Card.Title>
+            <Card.Text >{item.description} </Card.Text>
         </Card.Body>
     </Card>
     </>
