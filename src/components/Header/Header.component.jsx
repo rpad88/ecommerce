@@ -1,10 +1,15 @@
+import './header.style.css'
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { IoCartOutline } from "react-icons/io5"
 import SearchComponent from "../Search/Search.component"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { ShoppingCartContext } from "../../contexts/ShoppingCart.context"
 
 export default function HeaderComponent() {
+
+	const {quantity} = useContext(ShoppingCartContext)
 	const [showSearch, setShowSearch] = useState(true)
+
 	useEffect(() => {
 		const paginaAtual = window.location.href
 		if (!paginaAtual.includes("/home")) setShowSearch(false)
@@ -17,9 +22,10 @@ export default function HeaderComponent() {
 
 				{showSearch && <SearchComponent />}
 
-				<Nav className="ml-auto">
+				<Nav className="ml-auto badge">
+					<span className="count">{quantity}</span>
 					<Nav.Link href="/shoppingcart">
-						<IoCartOutline size={20} />
+						<IoCartOutline size={26} />
 					</Nav.Link>
 				</Nav>
 			</Container>
