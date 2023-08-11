@@ -16,6 +16,5 @@ export const WrapperTitle = styled.h5`
 export const CardGroup = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-content: space-evenly;
     row-gap: 1rem;
 `
