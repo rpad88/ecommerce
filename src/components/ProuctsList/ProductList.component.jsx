@@ -3,17 +3,8 @@ import * as Styled from './productList.style'
 import { useEffect, useState } from 'react'
 import { ProductsService } from '../../service/Products.service'
 
-export default function ProductListComponent({ sectionName }) {
-	const [products, setProducts] = useState([])
-
-	useEffect(() => {
-		async function getProducts() {
-			const data = await ProductsService.getAllProducts()
-            if(!data) return alert('something get wrong')
-            setProducts(data)
-		}
-		getProducts()
-	},[])
+export default function ProductListComponent({ sectionName, products }) {
+	
 
 	return (
 		<Styled.ProductListWrapper>
