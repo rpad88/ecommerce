@@ -20,5 +20,4 @@ export const Card = styled.div`
         padding: 5px;
         }
     }
-
 `
