@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react'
 
 export const ShoppingCartContext = createContext({
-	cartItems: 0,
+	cartItems: [],
 	setCartItems: () => {},
 })
 
