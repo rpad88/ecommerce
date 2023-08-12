@@ -31,7 +31,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
 	function decreaseCartQuantity(id) {
 		setCartItems((currentItems) => {
-			// if the product doesn`t exists on shopping cart, add them
+			// if has only 1 on cart, remove the product
 			if (currentItems.find((item) => item.id === id).qtyOnCart === 1) {
 				return currentItems.filter((item) => item.id != id)
 			} else {
