@@ -4,7 +4,7 @@ import HomePage from "./pages/Home.page"
 import ShoppingCartPage from "./pages/ShoppingCart.page"
 import CheckoutPage from "./pages/Checkout.page"
 import NotFoundPage from "./pages/NotFound.page"
-import HeaderComponent from "./components/Header/Header.component"
+import NavbarComponent from "./components/Navbar/Navbar.component"
 
 function App() {
 	fetch("http://localhost:3000/products")
@@ -15,7 +15,7 @@ function App() {
 
 	return (
 		<>
-				<HeaderComponent />
+				<NavbarComponent />
 				<Routes>
 					<Route path="/" element={<Navigate to='/home' />} />
 					<Route path="/home" element={<HomePage />} />
