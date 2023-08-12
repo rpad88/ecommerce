@@ -28,14 +28,14 @@ export default function ProductCardComponent({ item }) {
 					<Card.Text>{item.description} </Card.Text>
 
 					{getItemQuantity(item.id) !== 0 && 
-						<ProductActionsComponent id={item.id} />
+						<ProductActionsComponent product={item} />
 					}
 
 					{getItemQuantity(item.id) === 0 ? (
 						<Button
 							variant="outline-secondary"
 							className="mx-auto mt-3"
-							onClick={() => increaseCartQuantity(item.id)}
+							onClick={() => increaseCartQuantity(item)}
 						>
 							Adicionar ao carrinho
 						</Button>
@@ -43,7 +43,7 @@ export default function ProductCardComponent({ item }) {
 						<Button
 							variant="outline-danger"
 							className="mx-auto mt-3"
-							onClick={() => removeFromCart(item.id)}
+							onClick={() => removeFromCart(item)}
 						>
 							Remover do carrinho
 						</Button>

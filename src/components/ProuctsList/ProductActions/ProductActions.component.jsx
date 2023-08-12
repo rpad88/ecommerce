@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import * as Styled from './productActions.style'
 import { ShoppingCartContext } from '../../../contexts/ShoppingCart.context'
 
-export default function ProductActionsComponent({id}) {
+export default function ProductActionsComponent({product}) {
 
     const {
 		increaseCartQuantity,
@@ -14,14 +14,14 @@ export default function ProductActionsComponent({id}) {
 	return (
 		<Styled.ActionsWrapper>
 			<Styled.ActionBtn
-				onClick={() => decreaseCartQuantity(id)}
+				onClick={() => decreaseCartQuantity(product)}
 				className="btn btn-primary"
 			>
 				-
 			</Styled.ActionBtn>
-			<Styled.ProdQuantity>{getItemQuantity(id)}</Styled.ProdQuantity>
+			<Styled.ProdQuantity>{getItemQuantity(product.id)}</Styled.ProdQuantity>
 			<Styled.ActionBtn
-				onClick={() => increaseCartQuantity(id)}
+				onClick={() => increaseCartQuantity(product)}
 				className="btn btn-primary"
 			>
 				+
