@@ -1,5 +1,4 @@
 import { Container } from 'react-bootstrap'
-import HeaderComponent from '../components/Header/Header.component'
 import ProductListComponent from '../components/ProuctsList/ProductList.component'
 import { useEffect, useState } from 'react'
 import { ProductsService } from '../service/Products.service'
@@ -30,7 +29,6 @@ export default function HomePage() {
 
 	return (
 		<>
-			<HeaderComponent />
 			<Container>
 				<ProductListComponent
 					sectionName="ofertas do dia"
