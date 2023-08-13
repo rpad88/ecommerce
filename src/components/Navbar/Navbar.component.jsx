@@ -2,28 +2,24 @@ import './navbar.style.css'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { IoCartOutline } from 'react-icons/io5'
 import SearchComponent from '../Search/Search.component'
-import { useContext, useEffect, useState } from 'react'
+import { useContext} from 'react'
 import { ShoppingCartContext } from '../../contexts/ShoppingCart.context'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export default function NavbarComponent() {
 	const { cartQuantity } = useContext(ShoppingCartContext)
-	const [showSearch, setShowSearch] = useState(true)
 	const navigate = useNavigate()
+	const location = useLocation()
 
-	useEffect(() => {
-		const paginaAtual = window.location.href
-		if (!paginaAtual.includes('/home')) setShowSearch(false)
-	})
 
 	return (
 		<Navbar bg="light">
 			<Container>
-				<Navbar.Brand href="#" onClick={() => navigate('/')}>
+				<Navbar.Brand className='btn border-0' onClick={() => navigate('/home')}>
 					365 commerce
 				</Navbar.Brand>
 
-				{showSearch && <SearchComponent />}
+				{location.pathname === '/home' && <SearchComponent />}
 
 				<Nav.Link
 					className="badge p-2"
