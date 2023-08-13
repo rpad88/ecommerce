@@ -32,7 +32,9 @@ export const ShoppingCartProvider = ({ children }) => {
 	function decreaseCartQuantity(product) {
 		setCartItems((currentItems) => {
 			// if has only 1 on cart, remove the product
-			if (currentItems.find((item) => item.id === product.id).qtyOnCart === 1) {
+			if (
+				currentItems.find((item) => item.id === product.id).qtyOnCart === 1
+			) {
 				return currentItems.filter((item) => item.id != product.id)
 			} else {
 				return currentItems.map((item) => {
@@ -46,14 +48,19 @@ export const ShoppingCartProvider = ({ children }) => {
 		})
 	}
 
-    function removeFromCart(id) {
-        setCartItems(currentItems => {
-            return currentItems.filter(item => item.id !== id)
-        })
-    }
+	function removeFromCart(id) {
+		setCartItems((currentItems) => {
+			return currentItems.filter((item) => item.id !== id)
+		})
+	}
 
 	const cartQuantity = cartItems.reduce(
 		(quantity, item) => item.qtyOnCart + quantity,
+		0
+	)
+
+	const cartTotal = cartItems.reduce(
+		(sum, item) => item.qtyOnCart * item.price + sum,
 		0
 	)
 
@@ -65,8 +72,9 @@ export const ShoppingCartProvider = ({ children }) => {
 				getItemQuantity,
 				increaseCartQuantity,
 				decreaseCartQuantity,
-                removeFromCart,
-                cartQuantity
+				removeFromCart,
+				cartQuantity,
+				cartTotal
 			}}
 		>
 			{children}
