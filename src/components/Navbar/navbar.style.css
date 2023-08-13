@@ -7,8 +7,8 @@
 
 	.count {
 		position: absolute;
-		top: 5px;
-		right: 0;
+		top: 0;
+		right: 2px;
 		z-index: 2;
 		font-size: 11px;
 		border-radius: 50%;
