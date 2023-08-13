@@ -48,9 +48,9 @@ export const ShoppingCartProvider = ({ children }) => {
 		})
 	}
 
-	function removeFromCart(id) {
+	function removeFromCart(product) {
 		setCartItems((currentItems) => {
-			return currentItems.filter((item) => item.id !== id)
+			return currentItems.filter((item) => item.id !== product.id)
 		})
 	}
 
