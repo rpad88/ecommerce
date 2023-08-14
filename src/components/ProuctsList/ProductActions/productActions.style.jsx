@@ -4,7 +4,7 @@ export const ActionsWrapper = styled.div`
     padding: 0 !important;
     width: 100px;
     display: flex;
-    margin: 0 auto;
+    margin: auto auto 0;
     border: 1px solid #ddd;
     border-radius: .5rem;
 `

@@ -17,9 +17,3 @@ export const WrapperTitle = styled.h5`
 	font-size: 1.1rem;
 	margin-bottom: 1rem;
 `
-
-export const CardGroup = styled.div`
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    row-gap: 1rem;
-`
