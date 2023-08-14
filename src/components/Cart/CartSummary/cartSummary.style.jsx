@@ -8,6 +8,7 @@ export const SummaryCard = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    background-color: #fefefe;
     box-shadow: 0 0 5px #ddd;
 `
 
