@@ -6,7 +6,7 @@ export const SearchContext = createContext({
 })
 
 export const SearchProvider = ({ children }) => {
-	const [filter, setFilter] = useState()
+	const [filter, setFilter] = useState('')
 
 	return (
 		<SearchContext.Provider value={{ filter, setFilter }}>
