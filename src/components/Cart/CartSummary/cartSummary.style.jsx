@@ -5,10 +5,8 @@ export const SummaryCard = styled.div`
     padding: .5rem;
     border: 1px solid #ddd;
     border-radius: .5rem;
-    flex: 0 1 25%;
     display: flex;
     flex-direction: column;
-    max-height: 250px;
     gap: 1rem;
     box-shadow: 0 0 5px #ddd;
 `
