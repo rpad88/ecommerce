@@ -11,9 +11,10 @@ export default function HomePage() {
 	const [filtered, setFiltered] = useState()
 
 	const getProducts = async () => {
-		const data = await ProductsService.getAllProducts()
-		if (!data) return alert('something get wrong')
-		setProducts(data)
+		const mlb =  await fetch('https://dummyjson.com/products')
+		.then(res => res.json())
+		console.log(mlb.products)
+		setProducts(mlb.products)
 	}
 
 	const filterBest = () => {

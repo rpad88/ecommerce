@@ -5,13 +5,9 @@ import ShoppingCartPage from "./pages/ShoppingCart.page"
 import CheckoutPage from "./pages/Checkout.page"
 import NotFoundPage from "./pages/NotFound.page"
 import NavbarComponent from "./components/Navbar/Navbar.component"
+import { useEffect } from "react"
 
 function App() {
-	fetch("http://localhost:3000/products")
-		.then((res) => {
-			return res.json()
-		})
-		.then(console.log)
 
 	return (
 		<>

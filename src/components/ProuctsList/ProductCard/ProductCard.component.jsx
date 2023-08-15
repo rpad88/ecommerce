@@ -15,13 +15,13 @@ export default function ProductCardComponent({ item }) {
 	return (
 		<Col>
 			<Card className="h-100">
-				<Card.Img variant="top" src="https://placehold.co/250x200" />
+				<Card.Img variant="top" src={item.images[0]} height={259} />
 				<Card.Body className="d-flex flex-column justify-content-center">
 					<Card.Title>{MoneyFormatter.format(item.price)}</Card.Title>
 					<Card.Text
 						style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}
 					>
-						{item.description}{' '}
+						{item.title}{' '}
 					</Card.Text>
 
 					{getItemQuantity(item.id) !== 0 && (
