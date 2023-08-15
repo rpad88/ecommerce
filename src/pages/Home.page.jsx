@@ -1,25 +1,25 @@
 import { Container } from 'react-bootstrap'
 import ProductListComponent from '../components/ProuctsList/ProductList.component'
 import { useContext, useEffect, useState } from 'react'
-import { ProductsService } from '../service/Products.service'
+// import { ProductsService } from '../service/Products.service'
 import { SearchContext } from '../contexts/Search.context'
 
 export default function HomePage() {
 	const [products, setProducts] = useState([])
 	const [bestProducts, setBestProducts] = useState([])
 	const { filter } = useContext(SearchContext)
-	const [filtered, setFiltered] = useState()
+	const [filtered, setFiltered] = useState(products)
 
 	const getProducts = async () => {
-		const mlb =  await fetch('https://dummyjson.com/products')
+		const response =  await fetch('https://dummyjson.com/products')
 		.then(res => res.json())
-		console.log(mlb.products)
-		setProducts(mlb.products)
+		// console.log(response.products)
+		setProducts(response.products)
 	}
 
 	const filterBest = () => {
 		const bestList = products.filter((product) => {
-			return product.average_rating > 4.5
+			return product.rating > 4.7
 		})
 		setBestProducts(bestList)
 	}
@@ -33,7 +33,7 @@ export default function HomePage() {
 
 	function findItem() {
 		const result = products.filter((product) => {
-			return product.name.toLowerCase().includes(filter)
+			return product.title.toLowerCase().includes(filter)
 		})
 		setFiltered(result)
 	}
